@@ -1,1 +1,84 @@
-<p>sign-up works!</p>
+<div class="row" style="height: 100vh">
+  <div class="col-md-6 offset-3 align-self-center">
+    <div class="card">
+      <div class="row">
+        <div class="col-md-6">
+          <img
+            src="assets/images/login-cover.jpg"
+            alt="..."
+            style="height: 100%; width: 100%"
+          />
+        </div>
+        <div class="col-md-6">
+          <div class="card-body">
+            <form [formGroup]="signUpForm">
+              <div class="mb-3">
+                <label class="form-label">Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="name"
+                  required
+                  [ngClass]="{
+                    'is-invalid': signUpForm.get('name')?.status === 'INVALID'
+                  }"
+                />
+                <div class="invalid-feedback">Invalid username.</div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="email"
+                  required
+                  [ngClass]="{
+                    'is-invalid': signUpForm.get('email')?.status === 'INVALID'
+                  }"
+                />
+                <div class="invalid-feedback">Invalid username.</div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Username</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="username"
+                  required
+                  [ngClass]="{
+                    'is-invalid':
+                      signUpForm.get('username')?.status === 'INVALID'
+                  }"
+                />
+                <div class="invalid-feedback">Invalid username.</div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Password</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  formControlName="password"
+                  required
+                  [ngClass]="{
+                    'is-invalid':
+                      signUpForm.get('password')?.status === 'INVALID'
+                  }"
+                />
+                <div class="invalid-feedback">Invalid password.</div>
+              </div>
+              <div class="mb-3">
+                <button
+                  type="submit"
+                  class="btn btn-primary form-control"
+                  (click)="signUp()"
+                >
+                  SIGNUP
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
